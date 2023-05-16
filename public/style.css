@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family:  “Comic Sans MS”, “Comic Sans”, monospace;
+}
+
+body {
+    /* background-image: url(''); */
+    background-size: cover;
+    height: 100vh;
+    padding:0;
+    margin:0;
+    background-color: #f5ceff;
+}
+
+header {
+    height: 100px; 
+    font-size: 20px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly; 
+}
+
+form {
+    width: 450px;
+    height: 350px;
+    background-color: rgb(251, 237, 255);
+    position: relative;
+    align-items: center;
+    margin: auto;
+    padding: 50px;
+}
+
+button {
+    background-color: #e683ff;
+    width: 85px;
+    height: 35px;
+    border-radius: 20px;
+    color: rgb(255, 255, 255);
+    border: none;
+    margin: 10px;
+    align-items: center;
+}
+
+input{
+    width: 65%;
+    height: 30px;
+    border: none;
+    border-bottom: 2px solid #e600ff;
+    color: #9e00b6;
+    background-color: rgb(255, 253, 255);
+}
+
+h1 {
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 80px; 
+    /* background-color: #ed86fd; */
+    font-size: 50px;
+    color: rgb(179, 0, 215);
+    align-items: center;
+}
+
+nav {
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 60px; 
+    background-color: #ed86fd;
+    font-size: 20px;
+    color: rgb(179, 0, 215);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+a {
+    text-decoration: none;
+    color: rgb(162, 0, 255);
+    margin: 0 20px;
+}
+
+div {
+    width: 150px;
+    height: 80px;
+    background-color: rgb(251, 237, 255);
+    position: relative;
+    align-items: center;
+    margin: auto;
+    margin-top: 10px;
+    padding: 50px;
+}
+
+.styleSongContainers {
+    width: 450px;
+    height: 350px;
+    background-color: rgb(251, 237, 255);
+    position: relative;
+    align-items: center;
+    margin: auto;
+    padding: 50px;
+}
