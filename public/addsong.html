@@ -12,7 +12,7 @@
     <a href="songs.html">Songs</a>
     </nav>
     <h1 class = flex>Add Your Song </h1>
-    <form class = flex class="formStyle">
+    <form action="songs.html" class = flex class="formStyle">
       <label for="url">Enter Song Name:</label>
       <input type="text" id="songName" placeholder="Song Name" required/>
       <label for="url">Enter Song Artist:</label>
@@ -23,14 +23,14 @@
       <input
         type="url"
         name="url"
-        id="url"
+        id="songURL"
         placeholder="https://example.com"
         pattern="https://.*"
         size="30"
         required
       />
       <label for="moods">Choose a Mood:</label>
-      <select id="moods" name="moods">
+      <select id="songMoods" name="moods">
         <option value="happy">Happy</option>
         <option value="sad">Sad</option>
         <option value="motivation">Motivation</option>
@@ -40,6 +40,7 @@
       <button>Submit</button>
     </form>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="utils.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

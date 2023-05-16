@@ -1,0 +1,18 @@
+[
+    {
+      "id": 1,
+      "songName": "Map of the Soul: 7",
+      "songArtist": "BTS",
+      "songGenre": "pop",
+      "songURL" : "https://www.youtube.com/watch?v=gdZLi9oWNZg&ab_channel=HYBELABELS",
+      "songMoods": "Happy"
+    },
+    {
+      "id": 2,
+      "songName": "Map of the Soul: 7",
+      "songArtist": "BTS",
+      "songGenre": "pop",
+      "songURL" : "https://www.youtube.com/watch?v=gdZLi9oWNZg&ab_channel=HYBELABELS",
+      "songMoods": "Sad"
+    }
+]
