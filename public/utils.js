@@ -6,13 +6,20 @@ const errCallback = err => console.log(err.response.data)
 
 const getAllSongs = () => {
     axios.get(baseURL).then((res) => {
-        songs = res.data
+        let songs = res.data
         displayAllSongs(songs)
-        console.log(res)
+       // console.log(res)
     })
     .catch(errCallback)
 }
 
+const getMoodSongs = (mood) => {
+    axios.get(`${baseURL}/${mood}`).then((res) => {
+        let songs = res.data
+        displayAllSongs(songs)
+    })
+    .catch(errCallback)
+}
 const createSong = (body) => {
     axios.post(baseURL,body).then((res) => {
         // songs = res.data
