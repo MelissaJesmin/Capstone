@@ -6,8 +6,8 @@ const songGenre = document.querySelector('#songGenre')
 const songURL = document.querySelector('#songURL')
 const songMoods = document.querySelector('#songMoods')
 const displaySongs = document.querySelector('#displaySongs')
-
-
+const authButton = document.querySelector('#authSubmit')
+const addSongButton = document.querySelector('#addNewSong')
 
 function handleSubmit(e) {
     e.preventDefault()
@@ -30,8 +30,15 @@ function handleSubmit(e) {
     songMoods.value = ''
 
 }
+ 
+function addNewSongButton () {
+    const userId =  sessionStorage.getItem("userId")
+    const isAuthenticated = !userId ? false : true
+    !isAuthenticated ? window.location.href = './authLogin.html' : window.location.href = './addsong.html'
+  }
 
-form.addEventListener('submit',handleSubmit)
+//form.addEventListener('submit',handleSubmit)
+//authButton.addEventListener('click',handleAuth)
+addSongButton.addEventListener('click',addNewSongButton)
 
-
-getAllSongs();
+// getAllSongs();

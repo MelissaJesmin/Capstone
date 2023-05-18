@@ -12,7 +12,7 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
 })
 
-const db = require('../server/sampledb.json')
+const db = require('../db/sampledb.json')
 let id = db.length
 
 module.exports = {

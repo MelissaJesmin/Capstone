@@ -5,37 +5,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="authStyle.css">
     <title>Auth</title>
 
   </head>
 
   <body>
 
-    <header class="flex">
+    <header>
       <h1>Login To Access Your Songs</h1>
     </header>
 
     <main>
       <section>
         <h2>Login</h2>
-        <form action="/login" method="POST">
+        <form>
           <div>
-            <label for="login-username">Username</label>
-            <input type="text" id="login-username" name="username">
+            <label >Email address</label>
+            <input
+              type="email"
+              placeholder="name@example.com"
+              id = "login_email"
+            />
           </div>
-          <div>
-            <label for="login-password">Password</label>
-            <input type="password" id="login-password" name="password">
+          <div >
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              id = "login_password"
+            />
           </div>
-          <div>
-            <button type="submit">Login</button>
-          </div>
+        <button type="submit" id="authSubmit" onclick = 'handleAuth("login")'>Login</button>
         </form>
       </section>
       <p>No account? <a href="authSignUp.html"> Sign Up Here!</a></p>
       
     </main>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
   </body>
 
 </html>

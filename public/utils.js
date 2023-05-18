@@ -2,9 +2,9 @@
 const baseURL = `http://localhost:4004/songs`;
 
 //callback function for catch
-const errCallback = err => console.log(err.response.data)
+const errCallback = err => console.log(err.response)
 
-const getAllSongs = () => {
+function getAllSongs() {
     axios.get(baseURL).then((res) => {
         let songs = res.data
         displayAllSongs(songs)

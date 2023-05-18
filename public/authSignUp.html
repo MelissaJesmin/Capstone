@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="authStyle.css">
     <title>Sign Up</title>
   </head>
 
@@ -18,21 +18,30 @@
       
       <section>
         <h2>Create an Account</h2>
-        <form action="/register" method="POST">
+        <form>
           <div>
-            <label for="register-username">New username</label>
-            <input type="text" id="register-username" name="username">
+            <label >Email address</label>
+            <input
+              type="email"
+              placeholder="name@example.com"
+              id = "signup_email"
+            />
           </div>
-          <div>
-            <label for="register-password">New Password</label>
-            <input type="password" id="register-password" name="password">
+          <div >
+            <label>Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              id = "signup_password"
+            />
           </div>
-          <div>
-            <button type="submit">Create Account</button>
-          </div>
+        <button type="submit" id="authSubmit" onclick = 'event.preventDefault();handleAuth("signup")'>Sign Up</button>
         </form>
       </section>
     </main>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="utils.js"></script>
+    <script src="main.js"></script>
   </body>
 
 </html>
