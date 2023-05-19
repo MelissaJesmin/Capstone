@@ -8,6 +8,10 @@
     <title>Songs</title>
 </head>
 <body>
+    <nav>
+        <button type="button" id="library" > Library</button>
+        <button type="button" id="logout" > Logout</button>
+    </nav>
     <h1>Songs</h1>
 
     <section id="displaySongs" class="styleSongContainers">
@@ -27,8 +31,10 @@
         <button type="button" id="addNewSong" > Click Me To Add New Song</button>
     </main>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
-    <script src="addsong.js"></script>
     <script src="utils.js"></script>
+    <script src="songs.js"></script>
+    <script src="library.js"></script>
+
     <script>
         getAllSongs()
     </script>

@@ -79,7 +79,7 @@ nav {
     padding-left: 5px;
     padding-right: 5px;
     height: 60px; 
-    background-color: #ed86fd;
+    background-color: #ffffff;
     font-size: 20px;
     color: rgb(179, 0, 215);
     display: flex;
@@ -94,20 +94,20 @@ a {
     margin: 0 20px;
 }
 
-div {
-    width: 150px;
-    height: 80px;
+/* div {
+    width: 500px;
+    height: 500px;
     background-color: rgb(251, 237, 255);
     position: relative;
     align-items: center;
     margin: auto;
     margin-top: 10px;
     padding: 50px;
-}
+} */
 
 .styleSongContainers {
-    width: 450px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
     background-color: rgb(251, 237, 255);
     position: relative;
     align-items: center;

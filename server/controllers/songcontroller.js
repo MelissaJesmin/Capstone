@@ -37,4 +37,13 @@ module.exports = {
 
         res.status(200).send('song added successfully');
     }
+    // ,
+
+    // addToLibrary: (req,res) => {
+    //     id++;
+    //     let newSong = {...req.body}
+    //     // db.push(newSong)
+
+    //     res.status(200).send(newSong);
+    // }
 }

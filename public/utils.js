@@ -44,6 +44,7 @@ console.log(songs)
     <p class="song-genre"> Genre: ${songs.songGenre}</p>
     <a href = ${songs.songURL} class="song-url"> URL:Click Me</a>
     <p class="song-mood"> Mood: ${songs.songMoods}</p>
+    <button id="add-library" onclick = "addToLibrary(songs)">+</button>
     `
     displaySongs.appendChild(songCard)
 }
@@ -54,4 +55,13 @@ function displayAllSongs(arr) {
     for(let i =0; i < arr.length; i++) {
         createSongCard(arr[i])
     }
+}
+
+function logoutHandler() {
+    sessionStorage.clear()
+    window.location.reload(true) 
+  }
+
+function checkUser() {
+
 }

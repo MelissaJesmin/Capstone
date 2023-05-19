@@ -1,4 +1,4 @@
-const baseURL = `http://localhost:4004/songs`;
+
 
 const authButton = document.querySelector('#authSubmit')
 const login = (body) =>
@@ -26,6 +26,7 @@ const signUp = (body) => {
 
     
 const handleAuth = (authType) => {
+      
       let email = document.querySelector(`#${authType}_email`)
       let password = document.querySelector(`#${authType}_password`)
       console.log(email.value, password.value)
@@ -33,4 +34,8 @@ const handleAuth = (authType) => {
     };
 
 
-authButton.addEventListener('click',handleAuth)
+authButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  const authType = e.target.value
+  handleAuth(authType)
+})
