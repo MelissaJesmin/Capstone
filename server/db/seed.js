@@ -18,12 +18,37 @@ module.exports = {
       .query(
         `
         drop table if exists user_auth;
+        drop table if exists songs;
 
             create table user_auth(
-                song_user_id serial primary key,
+                user_id serial primary key,
                 email varchar not null,
                 passhash varchar(500) not null 
             );
+
+            CREATE TABLE songs(
+              song_id SERIAL PRIMARY KEY,
+              thumbnail VARCHAR(255) NOT NULL,
+              title VARCHAR(255) NOT NULL,
+              artist  VARCHAR(255) NOT NULL,
+              genre VARCHAR(255) NOT NULL,
+              url VARCHAR(255) NOT NULL,
+              moods VARCHAR(255) NOT NULL,
+              likes INTEGER
+          );
+
+          CREATE TABLE user_songs(
+            user_song_id SERIAL PRIMARY KEY,
+            user_id int references user_auth(user_id),
+            song_id int references songs(song_id)
+            );
+            
+
+
+
+          INSERT INTO songs (thumbnail, title, artist, genre, url, moods, likes)
+VALUES ('https://upload.wikimedia.org/wikipedia/commons/5/5f/BTS_-_Dynamite_%28official_cover%29.png', 'Dynamite', 'BTS','K-Pop','https://www.youtube.com/embed/gdZLi9oWNZg','Happy',300);
+
         
         
         `

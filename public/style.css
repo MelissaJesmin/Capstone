@@ -106,11 +106,12 @@ a {
 } */
 
 .styleSongContainers {
-    width: 500px;
-    height: 500px;
+    width: 500vw;
+    height: 200vh;
     background-color: rgb(251, 237, 255);
     position: relative;
     align-items: center;
     margin: auto;
     padding: 50px;
 }
+

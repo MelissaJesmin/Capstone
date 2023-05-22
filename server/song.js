@@ -11,16 +11,18 @@ app.use(express.json());
 app.use(express.static('public'))
 
 
-const { getAllSongs, getMoodSongs, createSong, addToLibrary} = require('./controllers/songcontroller')
+const { getAllSongs, getMoodSongs, createSong, addToLibrary, updateLikes, getLibrary} = require('./controllers/songcontroller')
 const { userLogin, userSignup } = require('./controllers/authController')
 //dev
 app.post('/seed',seed)
 //routes
 app.get('/songs',getAllSongs)
-app.get('/songs/:mood',getMoodSongs)
+app.get('/songs/:moods',getMoodSongs)
 app.post('/songs',createSong)
+app.post('/songs',addToLibrary)
+app.put('/songs/:song_id',updateLikes)
+app.get('/songs',getLibrary)
 
-// app.post('/songs',addToLibrary)
 //login and signup endpoints
 app.post('/songs/api/login',userLogin)
 app.post('/songs/api/signUp',userSignup)

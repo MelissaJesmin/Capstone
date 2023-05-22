@@ -13,11 +13,21 @@
     </nav>
     <h1 class = flex>Add Your Song </h1>
     <form action="songs.html" class = flex class="formStyle">
-      <label for="url">Enter Song Name:</label>
+      <label for="url">Enter Song Thumbnail URL:</label>
+      <input
+        type="url"
+        name="url"
+        id="songThumbnail"
+        placeholder="https://example.com"
+        pattern="https://.*"
+        size="30"
+        required
+      />
+      <label for="text">Enter Song Name:</label>
       <input type="text" id="songName" placeholder="Song Name" required/>
-      <label for="url">Enter Song Artist:</label>
+      <label for="text">Enter Song Artist:</label>
       <input type="text" id="songArtist" placeholder="Song Artist" required/>
-      <label for="url">Enter Song Genre:</label>
+      <label for="text">Enter Song Genre:</label>
       <input type="text" id="songGenre" placeholder="Song Genre" required/>
       <label for="url">Enter Song URL:</label>
       <input

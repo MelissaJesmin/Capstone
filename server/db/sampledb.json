@@ -1,18 +1,22 @@
 [
     {
       "id": 1,
+      "songThumbnail": "https://thumbs.dreamstime.com/b/favorite-song-flat-icon-vector-sign-romantic-melody-note-colorful-pictogram-isolated-white-valentines-day-music-symbol-logo-166926182.jpg",
       "songName": "Map of the Soul: 7",
       "songArtist": "BTS",
       "songGenre": "pop",
       "songURL" : "https://www.youtube.com/watch?v=gdZLi9oWNZg&ab_channel=HYBELABELS",
-      "songMoods": "Happy"
+      "songMoods": "Happy",
+      "songLikes": 400
     },
     {
       "id": 2,
+      "songThumbnail": "https://thumbs.dreamstime.com/b/favorite-song-flat-icon-vector-sign-romantic-melody-note-colorful-pictogram-isolated-white-valentines-day-music-symbol-logo-166926182.jpg",
       "songName": "Map of the Soul: 7",
       "songArtist": "BTS",
       "songGenre": "pop",
       "songURL" : "https://www.youtube.com/watch?v=gdZLi9oWNZg&ab_channel=HYBELABELS",
-      "songMoods": "Sad"
+      "songMoods": "Sad",
+      "songLikes": 200
     }
 ]

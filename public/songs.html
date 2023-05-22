@@ -9,8 +9,15 @@
 </head>
 <body>
     <nav>
-        <button type="button" id="library" > Library</button>
+        <a href="library.html"><button type="button" id="library" > Library</button></a>
         <button type="button" id="logout" > Logout</button>
+
+        <!-- <style >
+            #logout {
+            display: none;
+            }
+            
+            </style> -->
     </nav>
     <h1>Songs</h1>
 
@@ -28,15 +35,18 @@
         </div>
 
         <!-- <p><a href="addsong.html">Click Me To Add New Songs</a></p> -->
-        <button type="button" id="addNewSong" > Click Me To Add New Song</button>
+        <a href="addsong.html"> <button type="button" id="addNewSong" > Click Me To Add New Song</button></a>
+      
     </main>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="utils.js"></script>
     <script src="songs.js"></script>
-    <script src="library.js"></script>
+
 
     <script>
         getAllSongs()
+       displayLogout() 
+   
     </script>
 </body>
 </html>

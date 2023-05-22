@@ -6,7 +6,7 @@ const login = (body) =>
     .post(`${baseURL}/api/login`, body)
     .then((res) => {
       console.log(res.data);
-      sessionStorage.setItem("userId", res.data.song_user_id);
+      sessionStorage.setItem("userId", res.data.user_id);
       window.location.href='./songs.html';
     })
     .catch(errCallback)
@@ -18,8 +18,8 @@ const signUp = (body) => {
     .then(async (res) => {
        console.log("hit signup");
    
-      sessionStorage.setItem("userId", res.data.song_user_id);
-      window.location.href='./authLogin.html';
+      sessionStorage.setItem("userId", res.data.user_id);
+      window.location.href='./songs.html';
     })
     .catch(errCallback)
   }
