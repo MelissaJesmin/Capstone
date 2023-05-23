@@ -17,6 +17,7 @@ module.exports = {
     sequelize
       .query(
         `
+        drop table if exists user_songs;
         drop table if exists user_auth;
         drop table if exists songs;
 
@@ -43,7 +44,9 @@ module.exports = {
             song_id int references songs(song_id)
             );
             
-
+INSERT INTO user_auth(email,passhash)
+VALUES ('admin@gmail.com','$2a$10$EJ.69pTwtXy/PGj.MQftKe2BguU02kGd0Q2Vr3DuGvQssE18oUCiO'),
+('user@gmail.com','$2a$10$Vq0So2z2GLED8vIU7wcymu8ExPP.K0vFD.MgzCIfhYYWMu2NmUjOG');
 
 
           INSERT INTO songs (thumbnail, title, artist, genre, url, moods, likes)

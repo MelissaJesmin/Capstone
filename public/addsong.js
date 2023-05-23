@@ -22,7 +22,8 @@ function handleSubmit(e) {
         artist: songArtist.value,
         genre: songGenre.value, 
         url: songURL.value,
-        moods: songMoods.value
+        moods: songMoods.value,
+        likes: 0
     }
 
     createSong(body)

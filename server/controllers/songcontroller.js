@@ -12,8 +12,6 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
     }
 })
 
-const db = require('../db/sampledb.json')
-let id = db.length
 
 module.exports = {
     getAllSongs: (req,res) => {
@@ -26,8 +24,9 @@ module.exports = {
     },
     getMoodSongs: (req,res) => {
         let {moods} = req.params
+        console.log(moods)
         sequelize.query(
-            `SELECT * from songs WHERE moods = ${moods};`
+            `SELECT * from songs WHERE moods = '${moods}';`
         ).then((dbRes) => {
             res.status(200).send(dbRes[0])
          })
@@ -56,19 +55,6 @@ module.exports = {
     }
     ,
 
-    addToLibrary: (req,res) => {
-        const {user_id, song_id} = req.body;
-
-        sequelize.query(
-            `
-            INSERT INTO user_songs (user_id, song_id)
-            VALUES(${user_id}, ${song_id})
-            RETURNING *;
-            `)
-            .then((dbRes) => {res.status(200).send('song added to library successfully')})
-            .catch(err => console.log(err))
-    },
-
     updateLikes : (req,res) => {
 
         let {song_id} = req.params
@@ -83,8 +69,21 @@ module.exports = {
         .catch(err => console.log(err))
     },
 
+    addToLibrary: (req,res) => {
+        const {user_id, song_id} = req.body;
+
+        sequelize.query(
+            `
+            INSERT INTO user_songs (user_id, song_id)
+            VALUES(${user_id}, ${song_id})
+            RETURNING *;
+            `)
+            .then((dbRes) => {res.status(200).send('song added to library successfully')})
+            .catch(err => console.log(err))
+    },
+    
     getLibrary: (req,res) => {
-        
+        let {user_id} = req.params
         sequelize.query(`
         SELECT 
             s.song_id,
@@ -94,13 +93,26 @@ module.exports = {
             s.url,
             s.moods,
             s.likes,
-            u.song_id,
+            u.song_id
             FROM songs s
             JOIN user_songs u
             ON s.song_id = u.song_id
-            WHERE u.user_id = 1;
+            WHERE u.user_id = ${user_id}
+            RETURNING *;
     `)
     .then((dbRes) => {res.status(200).send(dbRes[0])})
     .catch(err => console.log(err))
+    }
+    ,
+
+    deleteSongInLibrary: (req,res) => {
+        const {song_id} = req.params;
+
+        sequelize.query(`
+            DELETE FROM songs
+            WHERE song_id = ${song_id}
+        `)
+        .then((dbRes) => {res.status(200).send(dbRes[0])})
+        .catch(err => console.log(err))
     }
 }

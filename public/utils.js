@@ -1,14 +1,21 @@
 //baseUrl
 const baseURL = `http://localhost:4004/songs`;
 
+
+//authentication
 function authenticateUser() {
     const userId =  sessionStorage.getItem("userId")
     const isAuthenticated = !userId ? false : true
     return isAuthenticated
   }
-//callback function for catch
+
+
+  //callback function for catch
 const errCallback = err => console.log(err.response)
 
+
+
+//get all songs for song.html
 function getAllSongs() {
     axios.get(baseURL).then((res) => {
         let songs = res.data
@@ -18,6 +25,7 @@ function getAllSongs() {
     .catch(errCallback)
 }
 
+//get songs related to the mood for mood.html
 const getMoodSongs = (mood) => {
     axios.get(`${baseURL}/${mood}`).then((res) => {
         let songs = res.data
@@ -25,10 +33,10 @@ const getMoodSongs = (mood) => {
     })
     .catch(errCallback)
 }
+
+//post songs into the database after user creates it using the form in addsong.html
 const createSong = (body) => {
     axios.post(baseURL,body).then((res) => {
-        // songs = res.data
-        // displayAllSongs(songs)
 
         if(res.status === 200) {
             alert(res.data)
@@ -38,6 +46,7 @@ const createSong = (body) => {
     .catch(errCallback)
 }
 
+//update the likes of the song 
 const updateLikes = (id,likeCount) => {
     console.log(id,likeCount)
     axios.put(`${baseURL}/${id}?c=${likeCount}`).then((res) => {
@@ -45,6 +54,9 @@ const updateLikes = (id,likeCount) => {
     })
     .catch(errCallback)
 }
+
+
+//display functions for song.html:
 
 function createSongCard(songs) {
     const songCard = document.createElement('div')
@@ -63,7 +75,7 @@ console.log(songs)
     <button onclick="updateLikes(${songs.song_id}, ${songs.likes-1})">&#128078;</button>
         <p class="song-likes"> ${songs.likes}</p>
         <button onclick="updateLikes(${songs.song_id}, ${songs.likes+1})">&#128077;</button>
-    <button id="add-library" onclick = "addToLibrary(${songs})">+</button>
+    <button id="add-library" onclick = "addToLibrary(${songs.song_id})">+</button>
     `
     displaySongs.appendChild(songCard)
 }
@@ -76,35 +88,87 @@ function displayAllSongs(arr) {
     }
 }
 
-function logoutHandler() {
-    sessionStorage.clear()
-    // window.location.reload(true) 
-    window.location.href='./authLogin.html'
-  }
 
 
-  function addToLibrary(songs) {
-    let isAuthenticated = authenticateUser()
-    !isAuthenticated ? window.location.href = './authLogin.html' : window.location.href = './library.html'
+//Library functions:
+
+  function addToLibrary(songId) {
+    // let isAuthenticated = authenticateUser()
+    // !isAuthenticated ? window.location.href = './authLogin.html' : window.location.href = './library.html'
     const userId =  sessionStorage.getItem("userId")
-    axios.post(baseURL,songs).then((res) => {
-       let song = res.data
-       displayAllSongs(song)
+    let body = {
+        user_id : userId,
+        song_id: songId
+    }
   
-      if(res.status === 200) {
-          window.location.href='./library.html'
-      }
+    axios.post(`${baseURL}/library`,body).then((res) => {
+       let song = res.data
+    
+       if(res.status === 200) {
+        alert(res.data)
+       }
+
+       displayLibrarySongs(song)
   })
   .catch(errCallback)
   }
 
   function getLibrary() {
-    axios.get(baseURL).then((res) => {
+    axios.get(`${baseURL}/library`).then((res) => {
         let songs = res.data
-        displayAllSongs(songs)
+        displayLibrarySongs(songs)
        // console.log(res)
     })
     .catch(errCallback)
+  }
+
+  function deleteSongInLibrary(id) {
+    axios.delete(`${baseURL}/${id}`)
+        .then(() => getLibrary())
+        .catch(err => console.log(err))
+}
+
+
+const displayLibrary = document.querySelector('#displayLibrary')
+//display functions for library.html: 
+
+  function displayLibrarySongs(arr) {
+    displayLibrary.innerHTML = ''
+    for(let i = 0; i < arr.length; i++) {
+        createLibraryCard(arr[i])
+    }
+}
+
+function createLibraryCard(songs) {
+    const LibraryCard = document.createElement('div')
+    LibraryCard.classList.add('library-card')
+console.log(songs)
+    LibraryCard.innerHTML = `
+    <div>
+    <img src= ${songs.thumbnail} >
+    <iframe width="560" height="315" src="${songs.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <p class="song-name"> Name: ${songs.title}</p>
+    <p class="song-artist">Artist: ${songs.artist}</p>
+    <p class="song-genre"> Genre: ${songs.genre}</p>
+    <a href = ${songs.url} class="song-url"> URL:Click Me</a>
+    <p class="song-mood"> Mood: ${songs.moods}</p>
+    <button onclick="updateLikes(${songs.song_id}, ${songs.likes-1})">&#128078;</button>
+        <p class="song-likes"> ${songs.likes}</p>
+        <button onclick="updateLikes(${songs.song_id}, ${songs.likes+1})">&#128077;</button>
+        <button onclick="deleteSongInLibrary(${songs.song_id})">Delete</button>
+    `
+    displayLibrary.appendChild(LibraryCard)
+}
+
+
+
+//Logout functions:
+
+  function logoutHandler() {
+    sessionStorage.clear()
+    // window.location.reload(true) 
+    window.location.href='./authLogin.html'
   }
 
   function displayLogout() {
