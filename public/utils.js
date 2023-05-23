@@ -1,5 +1,5 @@
 //baseUrl
-const baseURL = `http://localhost:4004/songs`;
+const baseURL = `http://localhost:4004`;
 
 
 //authentication
@@ -11,13 +11,13 @@ function authenticateUser() {
 
 
   //callback function for catch
-const errCallback = err => console.log(err.response)
+const errCallback = err => console.log(err)
 
 
 
 //get all songs for song.html
 function getAllSongs() {
-    axios.get(baseURL).then((res) => {
+    axios.get(`${baseURL}/songs`).then((res) => {
         let songs = res.data
         displayAllSongs(songs)
        // console.log(res)
@@ -27,7 +27,7 @@ function getAllSongs() {
 
 //get songs related to the mood for mood.html
 const getMoodSongs = (mood) => {
-    axios.get(`${baseURL}/${mood}`).then((res) => {
+    axios.get(`${baseURL}/songs/${mood}`).then((res) => {
         let songs = res.data
         displayAllSongs(songs)
     })
@@ -36,7 +36,7 @@ const getMoodSongs = (mood) => {
 
 //post songs into the database after user creates it using the form in addsong.html
 const createSong = (body) => {
-    axios.post(baseURL,body).then((res) => {
+    axios.post(`${baseURL}/songs`,body).then((res) => {
 
         if(res.status === 200) {
             alert(res.data)
@@ -49,7 +49,7 @@ const createSong = (body) => {
 //update the likes of the song 
 const updateLikes = (id,likeCount) => {
     console.log(id,likeCount)
-    axios.put(`${baseURL}/${id}?c=${likeCount}`).then((res) => {
+    axios.put(`${baseURL}/songs/${id}?c=${likeCount}`).then((res) => {
         getAllSongs()
     })
     .catch(errCallback)
@@ -63,19 +63,22 @@ function createSongCard(songs) {
     songCard.classList.add('song-card')
 console.log(songs)
     songCard.innerHTML = `
+    <div class="card" style="width: 18rem;">
     <div>
-    <img src= ${songs.thumbnail} >
-    <iframe width="560" height="315" src="${songs.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <img src= ${songs.thumbnail} class="card-img-top" >
     </div>
-    <p class="song-name"> Name: ${songs.title}</p>
-    <p class="song-artist">Artist: ${songs.artist}</p>
-    <p class="song-genre"> Genre: ${songs.genre}</p>
-    <a href = ${songs.url} class="song-url"> URL:Click Me</a>
-    <p class="song-mood"> Mood: ${songs.moods}</p>
+    <div class="card-body">
+    <h5 class="card-title" class="song-name"> Name: ${songs.title}</h5>
+    </div>
+    <p class="list-group-item" class="song-artist">Artist: ${songs.artist}</p>
+    <p class="list-group-item" class="song-genre"> Genre: ${songs.genre}</p>
+    <p class="list-group-item" class="song-mood"> Mood: ${songs.moods}</p>
+    <a href = ${songs.url} class="list-group-item" class="card-link" class="song-url"> Youtube Link</a>
     <button onclick="updateLikes(${songs.song_id}, ${songs.likes-1})">&#128078;</button>
         <p class="song-likes"> ${songs.likes}</p>
         <button onclick="updateLikes(${songs.song_id}, ${songs.likes+1})">&#128077;</button>
-    <button id="add-library" onclick = "addToLibrary(${songs.song_id})">+</button>
+    <button class="btn btn-primary" id="add-library" onclick = "addToLibrary(${songs.song_id})">+</button>
+    </div>
     `
     displaySongs.appendChild(songCard)
 }
@@ -89,32 +92,29 @@ function displayAllSongs(arr) {
 }
 
 
-
+const userId =  sessionStorage.getItem("userId")
 //Library functions:
 
   function addToLibrary(songId) {
     // let isAuthenticated = authenticateUser()
     // !isAuthenticated ? window.location.href = './authLogin.html' : window.location.href = './library.html'
-    const userId =  sessionStorage.getItem("userId")
+    
     let body = {
         user_id : userId,
         song_id: songId
     }
   
     axios.post(`${baseURL}/library`,body).then((res) => {
-       let song = res.data
     
        if(res.status === 200) {
         alert(res.data)
        }
-
-       displayLibrarySongs(song)
   })
   .catch(errCallback)
   }
 
   function getLibrary() {
-    axios.get(`${baseURL}/library`).then((res) => {
+    axios.get(`${baseURL}/library/${userId}`).then((res) => {
         let songs = res.data
         displayLibrarySongs(songs)
        // console.log(res)
@@ -122,14 +122,14 @@ function displayAllSongs(arr) {
     .catch(errCallback)
   }
 
-  function deleteSongInLibrary(id) {
-    axios.delete(`${baseURL}/${id}`)
+  function deleteSongInLibrary(song_id) {
+    axios.delete(`${baseURL}/library/${song_id}/${userId}`)
         .then(() => getLibrary())
         .catch(err => console.log(err))
 }
 
 
-const displayLibrary = document.querySelector('#displayLibrary')
+
 //display functions for library.html: 
 
   function displayLibrarySongs(arr) {
@@ -163,7 +163,7 @@ console.log(songs)
 
 
 
-//Logout functions:
+//Login and Logout functions:
 
   function logoutHandler() {
     sessionStorage.clear()
@@ -171,8 +171,21 @@ console.log(songs)
     window.location.href='./authLogin.html'
   }
 
+  function loginHandler() {
+    window.location.href='./authLogin.html'
+  }
+
   function displayLogout() {
-    if(!authenticateUser) {
+    let authenticate = authenticateUser()
+    if(!authenticate) {
         logoutButton.style.display = 'none'
     }
 }
+
+function displayLogin() {
+    let authenticate = authenticateUser()
+    if(authenticate) {
+        loginButton.style.display = 'none'
+    }
+}
+

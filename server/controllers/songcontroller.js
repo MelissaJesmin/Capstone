@@ -61,7 +61,8 @@ module.exports = {
         let {c} = req.query
 
         sequelize.query(`
-        UPDATE songs SET likes = ${c} 
+        UPDATE songs
+        SET likes = ${c} 
         WHERE song_id = ${song_id}
         RETURNING *;
         `)
@@ -87,6 +88,7 @@ module.exports = {
         sequelize.query(`
         SELECT 
             s.song_id,
+            s.thumbnail,
             s.title,
             s.artist,
             s.genre,
@@ -97,8 +99,7 @@ module.exports = {
             FROM songs s
             JOIN user_songs u
             ON s.song_id = u.song_id
-            WHERE u.user_id = ${user_id}
-            RETURNING *;
+            WHERE u.user_id = ${user_id};
     `)
     .then((dbRes) => {res.status(200).send(dbRes[0])})
     .catch(err => console.log(err))
@@ -106,11 +107,12 @@ module.exports = {
     ,
 
     deleteSongInLibrary: (req,res) => {
-        const {song_id} = req.params;
+        const {song_id, user_id} = req.params;
 
         sequelize.query(`
-            DELETE FROM songs
+            DELETE FROM user_songs
             WHERE song_id = ${song_id}
+            AND user_id = ${user_id}
         `)
         .then((dbRes) => {res.status(200).send(dbRes[0])})
         .catch(err => console.log(err))

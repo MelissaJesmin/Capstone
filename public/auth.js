@@ -3,7 +3,7 @@
 const authButton = document.querySelector('#authSubmit')
 const login = (body) =>
   axios
-    .post(`${baseURL}/api/login`, body)
+    .post(`${baseURL}/songs/api/login`, body)
     .then((res) => {
       console.log(res.data);
       sessionStorage.setItem("userId", res.data.user_id);
@@ -14,7 +14,7 @@ const login = (body) =>
 const signUp = (body) => {
   console.log(body)
     axios
-    .post(`${baseURL}/api/signUp`, body)
+    .post(`${baseURL}/songs/api/signUp`, body)
     .then(async (res) => {
        console.log("hit signup");
    

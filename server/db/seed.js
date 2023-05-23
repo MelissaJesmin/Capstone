@@ -35,14 +35,16 @@ module.exports = {
               genre VARCHAR(255) NOT NULL,
               url VARCHAR(255) NOT NULL,
               moods VARCHAR(255) NOT NULL,
-              likes INTEGER
+              likes INTEGER CHECK(likes >= 0)
           );
 
           CREATE TABLE user_songs(
             user_song_id SERIAL PRIMARY KEY,
             user_id int references user_auth(user_id),
-            song_id int references songs(song_id)
+            song_id int references songs(song_id),
+            unique (user_id,song_id)
             );
+
             
 INSERT INTO user_auth(email,passhash)
 VALUES ('admin@gmail.com','$2a$10$EJ.69pTwtXy/PGj.MQftKe2BguU02kGd0Q2Vr3DuGvQssE18oUCiO'),

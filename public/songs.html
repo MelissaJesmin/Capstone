@@ -11,18 +11,20 @@
 <body>
     <nav>
         <a href="library.html"><button type="button" id="library" > Library</button></a>
+        <button type="button" id="login" > Login</button>
         <button type="button" id="logout" > Logout</button>
+        <!-- <a href="authLogin.html">
+            <button class="btn btn-primary" id = "login-btn" onclick = change()>Login</button>
+        </a> -->
+        
+    <!-- <div id = "logout"></div> -->
 
-        <!-- <style >
-            #logout {
-            display: none;
-            }
-            
-            </style> -->
     </nav>
-    <h1>Songs</h1>
 
-    <section id="displaySongs" class="styleSongContainers">
+    
+    
+ 
+    <h1>Songs</h1>
   
     </section>
 
@@ -36,8 +38,9 @@
         </div>
 
         <!-- <p><a href="addsong.html">Click Me To Add New Songs</a></p> -->
-        <a href="addsong.html"> <button type="button" id="addNewSong" > Click Me To Add New Song</button></a>
-      
+        <a href="addsong.html"> <button type="button" id="addNewSong" > Add New Song</button></a>
+        
+        <section id="displaySongs" class="styleSongContainers">
     </main>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="utils.js"></script>
@@ -46,7 +49,16 @@
 
     <script>
         getAllSongs()
+        displayLogin() 
        displayLogout() 
+
+    //    function change() {
+    //     var a = "<button class='btn btn-primary'>Logout</button>";
+    //     document.getElementById("login-btn").style.display = 'none';
+    //     document.getElementById("logout").innerHTML = a;
+    //    }
+     
+        
    
     </script>
 </body>

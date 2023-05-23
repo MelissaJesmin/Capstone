@@ -8,7 +8,22 @@ body {
     /* background-image: url(''); */
     background-size: cover;
     height: 100vh;
-    padding:0;
     margin:0;
-    background-color: #f5ceff;
+    background-color: #f7d9ff;
+}
+
+form {
+    margin-left: 35%;
+    margin-right:25%;
+    width: 30%;
+    padding: 50px;
+    background-color: rgb(255, 255, 255);
+
+}
+#authSubmit {
+    background-color: blueviolet;
+    margin-left: 35%;
+    margin-right:25%;
+    width: 30%;
+    
 }

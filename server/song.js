@@ -24,9 +24,9 @@ app.post('/songs',createSong)
 app.put('/songs/:song_id',updateLikes)
 
 //library:
-app.post('/songs/library',addToLibrary)
-app.get('/songs/library',getLibrary)
-app.delete('/songs/:song_id', deleteSongInLibrary)
+app.post('/library',addToLibrary)
+app.get('/library/:user_id',getLibrary)
+app.delete('/library/:song_id/:user_id', deleteSongInLibrary)
 
 
 //login and signup endpoints
