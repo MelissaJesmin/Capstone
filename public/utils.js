@@ -63,22 +63,22 @@ function createSongCard(songs) {
     songCard.classList.add('song-card')
 console.log(songs)
     songCard.innerHTML = `
-    <div class="card" style="width: 18rem;">
     <div>
-    <img src= ${songs.thumbnail} class="card-img-top" >
+    <img src= ${songs.thumbnail} class = "song-thumbnail">
     </div>
-    <div class="card-body">
-    <h5 class="card-title" class="song-name"> Name: ${songs.title}</h5>
+    <div >
+    <h3  class="song-name"> ${songs.title}</h3>
     </div>
-    <p class="list-group-item" class="song-artist">Artist: ${songs.artist}</p>
-    <p class="list-group-item" class="song-genre"> Genre: ${songs.genre}</p>
-    <p class="list-group-item" class="song-mood"> Mood: ${songs.moods}</p>
-    <a href = ${songs.url} class="list-group-item" class="card-link" class="song-url"> Youtube Link</a>
-    <button onclick="updateLikes(${songs.song_id}, ${songs.likes-1})">&#128078;</button>
-        <p class="song-likes"> ${songs.likes}</p>
-        <button onclick="updateLikes(${songs.song_id}, ${songs.likes+1})">&#128077;</button>
-    <button class="btn btn-primary" id="add-library" onclick = "addToLibrary(${songs.song_id})">+</button>
+    <p class="song-artist">Artist: ${songs.artist}</p>
+    <p  class="song-genre"> Genre: ${songs.genre}</p>
+    <p  class="song-mood"> Mood: ${songs.moods}</p>
+    <a href = ${songs.url}  class="song-url"> Youtube Link</a>
+    <div class = "likes"> 
+    <button  class="btn outline" class = "likes" onclick="updateLikes(${songs.song_id}, ${songs.likes-1})">&#128078;</button>
+    <p class="song-likes"> ${songs.likes}</p>
+    <button  class="btn outline" class = "likes" onclick="updateLikes(${songs.song_id}, ${songs.likes+1})">&#128077;</button>
     </div>
+    <button class="btn fill" id="add-library" onclick = "addToLibrary(${songs.song_id})">+</button>
     `
     displaySongs.appendChild(songCard)
 }

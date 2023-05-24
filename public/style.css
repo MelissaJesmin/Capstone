@@ -1,117 +1,249 @@
-* {
-    margin: 0;
-    padding: 0;
-    font-family:  “Comic Sans MS”, “Comic Sans”, monospace;
+@font-face {
+  font-family: "ElMessiri-SemiBold";
+  src: url("../fonts/el_messiri/ElMessiri-SemiBold.ttf");
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../fonts/montserrat/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../fonts/montserrat/Montserrat-SemiBold.ttf");
 }
 
 body {
-    /* background-image: url(''); */
-    background-size: cover;
-    height: 100vh;
-    padding:0;
-    margin:0;
-    background-color: #f5ceff;
+  background-image: url("https://wallpaperaccess.com/full/2641048.gif");
+  background-size: cover;
+  font-family: "Montserrat-Regular";
+  color: #c800ff;
+  font-size: 15px;
+  margin: 0;
 }
 
-header {
-    height: 100px; 
-    font-size: 20px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    color: rgb(255, 255, 255);
+p,
+h3 {
+  margin: 1%;
 }
 
+.navStyle {
+  padding: 10px;
+  background-color: #9e00b6;
+  font-size: 20px;
+  display: flex;
+  justify-content: flex-end;
+  color: rgb(255, 255, 255);
+}
+
+#addNewSong{
+    position: relative;
+    top: 1px;
+    left: -1340px;
+    border-radius: 20px;
+    background: rgba(204, 0, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
+    border: none;
+    width: 100px;
+}
+
+#logout {
+    background: rgba(204, 0, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
+    filter: drop-shadow(0);
+
+     border-radius: 20px;
+    border: none;
+    width: 100px;
+     filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+     margin-left: 10px;
+}
+
+#library {
+        background: rgba(204, 0, 255, 0.9);
+        color: rgba(255, 255, 255, 0.95);
+        filter: drop-shadow(0);
+    
+         border-radius: 20px;
+        border: none;
+        width: 100px;
+         filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+         margin-left: 10px;
+}
+
+#login {
+    background: rgba(204, 0, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
+    filter: drop-shadow(0);
+
+     border-radius: 20px;
+    border: none;
+    width: 100px;
+     filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+     margin-left: 10px;
+}
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.flex {
-    display: flex; 
-    flex-direction: column;
-    justify-content: space-evenly; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 form {
-    width: 450px;
-    height: 350px;
-    background-color: rgb(251, 237, 255);
-    position: relative;
-    align-items: center;
-    margin: auto;
-    padding: 50px;
+  width: 450px;
+  height: 350px;
+  background-color: rgb(251, 237, 255);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 60px;
+  padding: 50px;
 }
 
-button {
-    background-color: #e683ff;
-    width: 85px;
-    height: 35px;
-    border-radius: 20px;
-    color: rgb(255, 255, 255);
-    border: none;
-    margin: 10px;
-    align-items: center;
-}
-
-input{
-    width: 65%;
-    height: 30px;
-    border: none;
-    border-bottom: 2px solid #e600ff;
-    color: #9e00b6;
-    background-color: rgb(255, 253, 255);
+input {
+  width: 65%;
+  height: 30px;
+  border: none;
+  border-bottom: 2px solid #e600ff;
+  color: #9e00b6;
+  background-color: rgb(255, 253, 255);
 }
 
 h1 {
-    border-radius: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    height: 80px; 
-    /* background-color: #ed86fd; */
-    font-size: 50px;
-    color: rgb(179, 0, 215);
-    align-items: center;
+  font-family: "Montserrat-SemiBold";
+  height: 80px;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+  align-items: center;
+  text-align: center;
+  padding-left: 100px;
+  padding-top: 30px;
 }
 
-nav {
-    padding-left: 5px;
-    padding-right: 5px;
-    height: 60px; 
-    background-color: #ffffff;
-    font-size: 20px;
-    color: rgb(179, 0, 215);
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
+h3 {
+  color: rgba(255, 255, 255, 0.98);
+  text-transform: uppercase;
+  font-size: 2.4rem;
+}
+.mood-pages{
+ font-family: "Montserrat-Regular";
+  height: 100px;
+  width: 100px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-left: 50px;
+  padding-top: 20px;
+  color: rgb(255, 255, 255);
+}
+.styleSongContainers {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 38px;
+  filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
+}
+
+.song-thumbnail {
+  width: 300px;
+  height: 320px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.song-card {
+  background-color: #f9cfff;
+  width: 350px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  color: #9e00b6;
+}
+
+.song-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.song-artist {
+  font-size: 15px;
+}
+
+.song-mood {
+  font-size: 15px;
+}
+
+.song-likes {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
-    text-decoration: none;
-    color: rgb(162, 0, 255);
-    margin: 0 20px;
+  text-decoration: none;
+  color: #ffffff;
 }
 
-/* div {
-    width: 500px;
-    height: 500px;
-    background-color: rgb(251, 237, 255);
-    position: relative;
-    align-items: center;
-    margin: auto;
-    margin-top: 10px;
-    padding: 50px;
-} */
+a:hover {
+  text-decoration: none;
+  color: #e100ff;
+}
 
-.styleSongContainers {
-    width: 500vw;
-    height: 200vh;
-    background-color: rgb(251, 237, 255);
-    position: relative;
-    align-items: center;
-    margin: auto;
-    padding: 50px;
+#add-library {
+  position: relative;
+  top: 20px;
+  left: 130px;
+}
+
+.btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 24px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  border: none;
+  margin: 10px;
+  align-items: center;
+}
+
+.fill {
+  background: rgba(204, 0, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
+  filter: drop-shadow(0);
+  font-weight: bold;
+}
+
+.fill:hover {
+  transform: scale(1.125);
+  border-color: rgba(255, 255, 255, 0.9);
+  filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+}
+
+.outline {
+  padding: 10px 15px;
+  background: transparent;
+  color: rgba(89, 0, 172, 0.9);
+  border: 2px solid rgba(126, 0, 194, 0.6);
+}
+
+.outline:hover {
+  transform: scale(1.125);
+  color: rgba(156, 0, 191, 0.9);
+  border-color: rgba(234, 157, 255, 0.9);
 }
 

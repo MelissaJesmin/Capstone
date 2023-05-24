@@ -9,38 +9,29 @@
     <title>Songs</title>
 </head>
 <body>
-    <nav>
+
+  
+    <nav class = navStyle>
+        <a href="addsong.html"> <button type="button" id="addNewSong" > Add Song</button></a>
         <a href="library.html"><button type="button" id="library" > Library</button></a>
         <button type="button" id="login" > Login</button>
         <button type="button" id="logout" > Logout</button>
-        <!-- <a href="authLogin.html">
-            <button class="btn btn-primary" id = "login-btn" onclick = change()>Login</button>
-        </a> -->
-        
-    <!-- <div id = "logout"></div> -->
 
     </nav>
 
-    
-    
- 
-    <h1>Songs</h1>
-  
-    </section>
-
     <main>
-        <h2>Pick a Mood</h2>
-        <div>
-            <a href="mood1.html">Happy</a>
-            <a href="mood2.html">Sad</a>
-            <a href="mood3.html">Motivated</a>
-            <a href="mood4.html">Relaxed</a>
+        <h1>Pick a Mood</h1>
+        <div class = "mood-pages" >
+            <a href="mood1.html" class = "mood-pages">Happy</a>
+            <a href="mood2.html" class = "mood-pages">Sad</a>
+            <a href="mood3.html" class = "mood-pages">Motivated</a>
+            <a href="mood4.html" class = "mood-pages">Relaxed</a>
         </div>
 
-        <!-- <p><a href="addsong.html">Click Me To Add New Songs</a></p> -->
-        <a href="addsong.html"> <button type="button" id="addNewSong" > Add New Song</button></a>
         
-        <section id="displaySongs" class="styleSongContainers">
+        
+        
+        <section id="displaySongs" class="styleSongContainers"></section>
     </main>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="utils.js"></script>

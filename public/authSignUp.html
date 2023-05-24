@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="authStyle.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="authStyle.css" />
     <title>Sign Up</title>
   </head>
 
   <body>
-    <header>
-      <h1>Create a New Account</h1>
-    </header>
-
-    <main>
-      
-      <section>
-        <h2>Create an Account</h2>
+    <div class = "wrapper">
+      <div class = "inner">
+        <div class="image-holder">
+          <img src="https://i.pinimg.com/originals/38/47/7b/38477bc0a5b0ac8de0e9c67b85136769.png" alt="">
+        </div>
         <form>
-          <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Email</label>
+          <h3>Sign Up</h3>
+          <div class="form-holder">
             <input
               type="email"
-              placeholder="name@example.com"
-              id = "signup_email"
+              placeholder="E-mail"
+              id="signup_email"
+              class="form-control"
             />
           </div>
-          <div class="row mb-3">
-            <label class="col-sm-2 col-form-label">Password</label>
+          <div class="form-holder">
             <input
               type="password"
               placeholder="Password"
-              id = "signup_password"
+              id="signup_password"
+              class="form-control"
             />
           </div>
-        <button type="submit" id="authSubmit" value="signup" class="btn btn-primary">Sign Up</button>
+          <div class="form-login">
+            <button type="submit" id="authSubmit" value="signup">SIGN UP</button>
+            <p>Already Have An Account? <a href="./authLogin.html">Login</a></p>
+          </div>
+          
         </form>
-      </section>
-    </main>
+      </div>
+    </div>
     <script src="../node_modules/axios/dist/axios.min.js"></script>
     <script src="utils.js"></script>
     <script src="auth.js"></script>
   </body>
-
 </html>
