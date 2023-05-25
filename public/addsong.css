@@ -1,125 +1,138 @@
-input:focus, select:focus, textarea:focus {
-    outline: none;
- 
-    }
 
-  h2 {
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    font-weight: bold;
-    color: #fff;
-    font-family: Poppins;
-    font-size: 21px;
-    text-align: center;
-    margin-bottom: 28px; }
-  
-  .song-form {
-    width: 41.67%;
-    background: #cd28ff;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px; }
-  
-  
-  .form-group {
-    margin-bottom: 10px;
-    position: relative; }
-  
-  .form-input {
-    padding-top: 21px; }
-  
-  .form-label {
-    position: absolute;
-    transition: 0.25s ease;
-    color: #bebebe;
-    left: 0;
-    top: 23px; }
-  
-  input {
-    transition: 0.3s ease;
-    padding-top: 10px;
-   }
-    input:focus + .form-label, input:valid + .form-label {
-      top: 1px;
-      font-size: 11px;
-      color: #edb77d; }
-  
-  input, select {
-    box-sizing: border-box;
-    width: 100%;
-    display: block;
-    border: none;
-    font-family: Poppins;
-    color: #fff;
-    background: transparent;
-    border-bottom: 1px solid #999;
-    padding: 4px 0; }
-    input:focus, select:focus {
-      border-bottom: 1px solid #edb77d; }
-  
-  
-  .submit {
-    width: auto;
-    background: #6f0086;
-    color: #fff;
-    padding: 15px 43px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; }
-    .submit:hover {
-      background: #f308ff; }
-  
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
 
- 
+h2 {
   
-    .song-form {
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 0px;
-    height: 550px; 
-width: 500px;}
-  
-  
-    form {
-      padding: 72px 40px 70px 40px; } 
-  
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: 'Shrikhand', cursive;
+  font-size: 21px;
+  text-align: center;
+  letter-spacing: 3px;
+  margin-bottom: 28px;
+}
 
-      .wrapper {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        background: url("https://64.media.tumblr.com/8bece4ca2c71f2fd9563d835de049772/tumblr_onrxltDM7r1uzwgsuo1_400.gif") no-repeat;
-        background-size: cover;
-        background-color: #fadaff;
-      }
-      
-      .inner {
-        width: 850px;
-        height: 550px;
-        margin: auto;
-        background: #fff;
-        display: flex;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-      }
-      
-      .image-holder {
-        width: 50%;
-        height: 50px;
-        padding-right: 15px;
-        padding-left: 15px;
-        align-items: center;
-      }
+.song-form {
+  width: 41.67%;
+  background: #d28fff;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
 
-      img {
-        max-width: 60%;
-        margin: auto;
-        padding-left: 60px;
-        padding-top: 150px;
-      }
+.form-group {
+  margin-bottom: 10px;
+  position: relative;
+  
+}
 
-      body {
-        font-family: "Montserrat-Regular";
-        color: #c800ff;
-        font-size: 15px;
-        margin: 0;
-      }
+.form-input {
+  padding-top: 21px;
+}
+
+.form-label {
+  position: absolute;
+  transition: 0.25s ease;
+  color: #ffffff;
+  font-family: 'Boogaloo', cursive;
+  font-size: 16px;
+  left: 0;
+  top: 23px;
+}
+
+input {
+  transition: 0.3s ease;
+  padding-top: 10px;
+}
+input:focus + .form-label,
+input:valid + .form-label {
+  top: 1px;
+  font-size: 11px;
+  color: #ffffff;
+}
+
+input,
+select {
+  box-sizing: border-box;
+  font-family: 'Boogaloo', cursive;
+  width: 100%;
+  display: block;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  border-bottom: 1px solid #ffffff;
+  padding: 4px 0;
+  background-color: #d28fff;
+}
+
+
+.submit {
+  width: auto;
+  background: #ffffff;
+  color: #d28fff;
+  padding: 15px 43px;
+  font-weight: bold;
+  font-size: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Shrikhand', cursive;
+  letter-spacing: 1px;
+}
+.submit:hover {
+  background: #bf60ff;
+  color: white;
+}
+
+.song-form {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  height: 550px;
+  width: 500px;
+}
+
+form {
+  padding: 72px 40px 70px 40px;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.inner {
+  width: 1000px;
+  height: 550px;
+  margin: auto;
+  background: #000000;
+  display: flex;
+  box-shadow: 30px 30px 30px 30px rgba(68, 0, 117, 0.2);
+  background: transparent;
+}
+
+.image-holder {
+  width: 50%;
+  height: 50px;
+  padding-right: 15px;
+  padding-left: 15px;
+  align-items: center;
+  background: transparent;
+
+  
+}
+
+img {
+  max-width: 105%;
+  height: 1100%;
+  padding-top: 20px;
+}
+
+body {
+  margin: 0;
+}
