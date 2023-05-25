@@ -51,6 +51,7 @@ const updateLikes = (id,likeCount) => {
     console.log(id,likeCount)
     axios.put(`${baseURL}/songs/${id}?c=${likeCount}`).then((res) => {
         getAllSongs()
+        getLibrary()
     })
     .catch(errCallback)
 }
@@ -145,18 +146,21 @@ function createLibraryCard(songs) {
 console.log(songs)
     LibraryCard.innerHTML = `
     <div>
-    <img src= ${songs.thumbnail} >
-    <iframe width="560" height="315" src="${songs.url}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <img src= ${songs.thumbnail} class = "song-thumbnail">
     </div>
-    <p class="song-name"> Name: ${songs.title}</p>
+    <div >
+    <h3  class="song-name"> ${songs.title}</h3>
+    </div>
     <p class="song-artist">Artist: ${songs.artist}</p>
-    <p class="song-genre"> Genre: ${songs.genre}</p>
-    <a href = ${songs.url} class="song-url"> URL:Click Me</a>
-    <p class="song-mood"> Mood: ${songs.moods}</p>
-    <button onclick="updateLikes(${songs.song_id}, ${songs.likes-1})">&#128078;</button>
-        <p class="song-likes"> ${songs.likes}</p>
-        <button onclick="updateLikes(${songs.song_id}, ${songs.likes+1})">&#128077;</button>
-        <button onclick="deleteSongInLibrary(${songs.song_id})">Delete</button>
+    <p  class="song-genre"> Genre: ${songs.genre}</p>
+    <p  class="song-mood"> Mood: ${songs.moods}</p>
+    <a href = ${songs.url}  class="song-url"> Youtube Link</a>
+    <div class = "likes"> 
+    <button  class="btn outline" class = "likes" onclick="updateLikes(${songs.song_id}, ${songs.likes-1})">&#128078;</button>
+    <p class="song-likes"> ${songs.likes}</p>
+    <button  class="btn outline" class = "likes" onclick="updateLikes(${songs.song_id}, ${songs.likes+1})">&#128077;</button>
+    </div>
+    <button class="btn fill" id="delete" onclick="deleteSongInLibrary(${songs.song_id})"> &#128465;</button>
     `
     displayLibrary.appendChild(LibraryCard)
 }

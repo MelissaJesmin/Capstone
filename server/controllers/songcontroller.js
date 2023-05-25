@@ -16,7 +16,8 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 module.exports = {
     getAllSongs: (req,res) => {
         sequelize.query(
-            `SELECT * from songs;`
+            `SELECT * from songs
+            ORDER BY song_id ASC;`
         ).then((dbRes) => {
             res.status(200).send(dbRes[0])
          })
@@ -32,14 +33,6 @@ module.exports = {
          })
          .catch(err => console.log(err))
        
-         // let moodSongs = []
-        // let {mood} = req.params
-        // for (let i = 0; i < db.length; i++) {
-        //     if(db[i].songMoods === mood) {
-        //          moodSongs.push(db[i])
-        //     }
-        //   }
-        // res.status(200).send(moodSongs)
     },
     createSong : (req,res) => {
         const {thumbnail, title, artist, genre, url, moods, likes} = req.body;
@@ -99,7 +92,8 @@ module.exports = {
             FROM songs s
             JOIN user_songs u
             ON s.song_id = u.song_id
-            WHERE u.user_id = ${user_id};
+            WHERE u.user_id = ${user_id}
+            ORDER BY s.song_id ASC;
     `)
     .then((dbRes) => {res.status(200).send(dbRes[0])})
     .catch(err => console.log(err))

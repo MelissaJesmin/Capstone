@@ -14,7 +14,7 @@ const displaySongs = document.querySelector('#displaySongs')
 function handleSubmit(e) {
     e.preventDefault()
     let isAuthenticated = authenticateUser()
-    !isAuthenticated ? window.location.href = './authLogin.html' : window.location.href = './addsong.html'
+    !isAuthenticated ? window.location.href = './authLogin.html' : window.location.href = './songs.html'
      //create body object for post
      let body = {
         thumbnail: songThumbnail.value,
