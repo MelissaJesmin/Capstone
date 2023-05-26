@@ -15,14 +15,12 @@
 ## Tech stack
 * Javascript
 * HTML & CSS
+* PostgreSQL
 
 ## Video
 <a href="https://youtu.be/WL3pXtjKnzA
 " target="_blank"><img src="https://i9.ytimg.com/vi_webp/WL3pXtjKnzA/mqdefault.webp?v=6470cb62&sqp=CIS2w6MG&rs=AOn4CLBa5Blug9eNR-eEBe2bRWhidC0Nmg" 
 alt="IMAGE ALT TEXT HERE" width="340" height="180" border="10" /></a>
-
-## Demo Gif
-[Mood Pop Demo]()
 
 ## Packages
 * Axios
@@ -36,3 +34,6 @@ alt="IMAGE ALT TEXT HERE" width="340" height="180" border="10" /></a>
 
 ## Install Packages
 * Run ```npm i``` in your terminal inside project directory.
+
+## Enrivonment Variable
+An .env file is required, with a server port and a CONENCTION_STRING to your database. This project uses a bit.io postgres database.
