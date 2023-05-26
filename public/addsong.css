@@ -19,7 +19,7 @@ h2 {
 
 .song-form {
   width: 41.67%;
-  background: #d28fff;
+  background: #cabdff;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
@@ -66,14 +66,14 @@ select {
   font-size: 15px;
   border-bottom: 1px solid #ffffff;
   padding: 4px 0;
-  background-color: #d28fff;
+  background-color: #cabdff;
 }
 
 
 .submit {
   width: auto;
   background: #ffffff;
-  color: #d28fff;
+  color: #cabdff;
   padding: 15px 43px;
   font-weight: bold;
   font-size: 15px;
@@ -84,7 +84,7 @@ select {
   letter-spacing: 1px;
 }
 .submit:hover {
-  background: #bf60ff;
+  background: #6004bd;
   color: white;
 }
 
@@ -128,8 +128,8 @@ form {
 }
 
 img {
-  max-width: 105%;
-  height: 1100%;
+  max-width: 500%;
+  height: 1000%;
   padding-top: 20px;
 }
 

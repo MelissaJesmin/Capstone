@@ -29,7 +29,7 @@ h3 {
 
 .navStyle {
   padding: 10px;
-  background-color: #d28fff;
+  background-color: #cabdff;
   font-size: 20px;
   display: flex;
   justify-content: flex-end;
@@ -38,9 +38,9 @@ h3 {
 
 .navStyleLibrary {
   padding: 10px;
-  background-color: #d28fff;
+  background-color: #cabdff;
   font-size: 20px;
-  color: rgb(164, 8, 8);
+  color:#6004bd;
 }
 
 #addNewSong {
@@ -122,10 +122,10 @@ h3 {
   font-family: 'Shrikhand', cursive;
   height: 80px;
   font-size: 50px;
-  color: #E0B0FF;
+  color: #cabdff;
   align-items: center;
   text-align: center;
-  padding-left: 100px;
+  padding-left: 50px;
   padding-top: 30px;
 }
 
@@ -133,7 +133,7 @@ h3 {
   font-family: 'Shrikhand', cursive;
   height: 80px;
   font-size: 50px;
-  color: #E0B0FF;
+  color: #cabdff;
   align-items: center;
   text-align: center;
   padding-left: 100px;
@@ -147,9 +147,9 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding-left: 50px;
+  padding-left: 20px;
   padding-top: 20px;
-  color: #eeb6ff;
+  color: #cabdff;
 }
 .styleSongContainers {
   display: flex;
@@ -168,7 +168,7 @@ h3 {
 }
 
 .song-card {
-  background-color: #d28fff;
+  background-color: #cabdff;
   width: 350px;
   margin: 20px;
   padding: 20px;
@@ -176,11 +176,11 @@ h3 {
   flex-direction: column;
   align-items: center;
   border-radius: 12px;
-  color: #8600b6;
+  color: #6004bd;
 }
 
 .library-card {
-  background-color: #d28fff;
+  background-color: #cabdff;
   width: 350px;
   margin: 20px;
   padding: 20px;
@@ -188,7 +188,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   border-radius: 12px;
-  color: #8600b6;
+  color: #6004bd;
 }
 
 .song-name {
@@ -230,7 +230,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #e100ff;
+  color: #6004bd;
 }
 
 #add-library {
@@ -253,7 +253,7 @@ a:hover {
 }
 
 .fill {
-  background: #8600b6;
+  background: #6004bd;
   color: rgba(255, 255, 255, 0.95);
   filter: drop-shadow(0);
   font-weight: bold;
@@ -268,8 +268,8 @@ a:hover {
 .outline {
   padding: 10px 15px;
   background: transparent;
-  color: rgba(89, 0, 172, 0.9);
-  border: 2px solid rgba(126, 0, 194, 0.6);
+  color: #6004bd;
+  border: 2px solid #6004bd;
 }
 
 .outline:hover {
@@ -290,10 +290,10 @@ a:hover {
   font-family: 'Shrikhand', cursive;
   height: 80px;
   font-size: 50px;
-  color: #E0B0FF;
+  color: #cabdff;
   align-items: center;
   text-align: center;
-  padding-left: 100px;
+  /* padding-left: 100px; */
   padding-top: 30px;
 }
 

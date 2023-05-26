@@ -20,7 +20,6 @@ function getAllSongs() {
     axios.get(`${baseURL}/songs`).then((res) => {
         let songs = res.data
         displayAllSongs(songs)
-       // console.log(res)
     })
     .catch(errCallback)
 }
@@ -97,8 +96,6 @@ const userId =  sessionStorage.getItem("userId")
 //Library functions:
 
   function addToLibrary(songId) {
-    // let isAuthenticated = authenticateUser()
-    // !isAuthenticated ? window.location.href = './authLogin.html' : window.location.href = './library.html'
     
     let body = {
         user_id : userId,
@@ -171,7 +168,6 @@ console.log(songs)
 
   function logoutHandler() {
     sessionStorage.clear()
-    // window.location.reload(true) 
     window.location.href='./authLogin.html'
   }
 
