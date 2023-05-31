@@ -19,7 +19,7 @@
 
 ## Video
 <a href="https://youtu.be/WL3pXtjKnzA"</a>
-
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/WL3pXtjKnzA/0.jpg)](http://www.youtube.com/watch?v=WL3pXtjKnzA "Mood Pop Demo")
 ## Packages
 * Axios
 * Bcryptjs
